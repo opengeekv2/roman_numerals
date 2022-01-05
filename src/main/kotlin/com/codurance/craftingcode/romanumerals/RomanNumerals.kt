@@ -9,6 +9,7 @@ fun convert(number: Int): String? {
     items[10] = "X" 
     items[50] = "L"
     items[100] = "C" 
+    items[500] = "D"
 
     return items[number]
 }

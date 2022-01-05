@@ -14,7 +14,8 @@ class RomanNumeralsTest {
         "V, 5",
         "X, 10",
         "L, 50",
-        "C, 100"
+        "C, 100",
+        "D, 500"
     )
     fun testNumbers(roman: String, number: Int) {
         val result = convert(number)
