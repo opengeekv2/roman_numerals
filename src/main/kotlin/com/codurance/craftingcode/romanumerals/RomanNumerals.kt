@@ -1,54 +1,46 @@
 package com.codurance.craftingcode.romanumerals
 
 fun convert(number: Int): String? {
-    val items = LinkedHashMap<Int, String>()
+    val digits = LinkedHashMap<Int, String>()
+    val notMultiplesOfFive = LinkedHashMap<Int, String>()
 
     var result = ""
 
-    items[1000] = "M"
-    items[500] = "D"
-    items[100] = "C"
-    items[50] = "L"
-    items[10] = "X"
-    items[5] = "V"
-    items[1] = "I"
+    digits[1000] = "M"
+    digits[500] = "D"
+    digits[100] = "C"
+    digits[50] = "L"
+    digits[10] = "X"
+    digits[5] = "V"
+    digits[1] = "I"
 
-    if (items.containsKey(number)) {
-        result += items[number]
-    } else {
-        for (key in items.keys) {
-            if (items.containsKey(number - key)) {
-                result = items[key] + items[number - key]
+    notMultiplesOfFive[1000] = "M"
+    notMultiplesOfFive[100] = "C"
+    notMultiplesOfFive[10] = "X"
+    notMultiplesOfFive[1] = "I"
+
+    for (key in digits.keys) {
+        try {
+            if (digits.containsKey(number)) {
+                result = digits[number]!!
                 break
             }
-            if (items.containsKey(number - key - 1)) {
-                result = items[key] + items[number - key - 1] + 'I'
-                break
-            }
+        } catch (e: Exception) {
+            continue
+        }
+
+        if (digits.containsKey(number - key)) {
+            result = digits[key] + digits[number - key]
+            break
+        }
+
+        for (notMKey in notMultiplesOfFive.keys) {
             try {
-                if (items[number - key - 10]!! .equals("X")) {
-                    result = items[key] + items[number - key - 10] + 'X'
+                if (digits[number - key - notMKey]!! .equals(notMultiplesOfFive[notMKey])) {
+                    result = digits[key] + digits[number - key - notMKey] + notMultiplesOfFive[notMKey]
                     break
                 }
-            }
-            catch (ex: Exception) {
-                try {
-                    if (items[number - key - 100]!! .equals("C")) {
-                        result = items[key] + items[number - key - 100] + 'C'
-                        break
-                    }
-                }
-                catch (ex: Exception) {
-                    try {
-                        if (items[number - key - 1000]!! .equals("M")) {
-                            result = items[key] + items[number - key - 1000] + 'M'
-                            break
-                        }
-                    }
-                    catch (ex: Exception) {
-                        continue
-                    }
-                }
+            } catch (e: Exception) {
                 continue
             }
         }
