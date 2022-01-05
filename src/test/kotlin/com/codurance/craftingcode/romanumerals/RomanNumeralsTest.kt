@@ -24,8 +24,14 @@ class RomanNumeralsTest {
     @ParameterizedTest
     @CsvSource(
         "II, 2",
+        "VI, 6",
+        "XI, 11",
+        "LI, 51",
+        "CI, 101",
+        "DI, 501",
+        "MI, 1001"
     )
-    fun testWhenNumber2ThenII(roman: String, number: Int) {
+    fun testWhenNumberLetterPlusOneThenCorrectRomanLetter(roman: String, number: Int) {
         assertsNumbers(roman, number)
     }
 
