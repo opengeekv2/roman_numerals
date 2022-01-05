@@ -35,9 +35,21 @@ class RomanNumeralsTest {
         assertsNumbers(roman, number)
     }
 
+    @ParameterizedTest
+    @CsvSource(
+        "XV, 15",
+        "LV, 55",
+        "CV, 105",
+        "DV, 505",
+        "MV, 1005"
+    )
+    fun testWhenNumberLetterPlusFiveThenCorrectRomanLetter(roman: String, number: Int) {
+        assertsNumbers(roman, number)
+    }
+
     private fun assertsNumbers(roman: String, number: Int) {
         val result = convert(number)
-        assertEquals(roman, result, "")
+        assertEquals(roman, result)
     }
 }
 
