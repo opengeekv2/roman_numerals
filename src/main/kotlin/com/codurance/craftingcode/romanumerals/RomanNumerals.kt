@@ -23,8 +23,12 @@ fun convert(number: Int): String? {
         result = items[number - 10] + "X"
     } else if (items.containsKey(number - 50)) {
         result = items[number - 50] + "L"
-    } else {
+    } else if (items.containsKey(number - 100)) {
         result = items[number - 100] + "C"
+    } else if (items.containsKey(number - 500)) {
+        result = items[number - 500] + "D"
+    } else {
+        result = items[number - 1000] + "M"
     }
 
     return result

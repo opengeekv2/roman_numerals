@@ -79,6 +79,22 @@ class RomanNumeralsTest {
         assertsNumbers(roman, number)
     }
 
+    @ParameterizedTest
+    @CsvSource(
+        "MD, 1500"
+    )
+    fun testWhenNumberLetterPlusFiveHundredThenCorrectRomanLetter(roman: String, number: Int) {
+        assertsNumbers(roman, number)
+    }
+
+    @ParameterizedTest
+    @CsvSource(
+        "MM, 2000"
+    )
+    fun testWhenNumberLetterPlusThousendThenCorrectRomanLetter(roman: String, number: Int) {
+        assertsNumbers(roman, number)
+    }
+
 
     private fun assertsNumbers(roman: String, number: Int) {
         val result = convert(number)
