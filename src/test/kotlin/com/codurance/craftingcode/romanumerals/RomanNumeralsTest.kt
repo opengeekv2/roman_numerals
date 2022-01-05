@@ -1,16 +1,22 @@
 package com.codurance.craftingcode.romanumerals
 
-import org.junit.Test
+import org.junit.jupiter.api.Test
+import org.junit.jupiter.params.ParameterizedTest
+import org.junit.jupiter.params.provider.CsvSource
 import kotlin.test.assertEquals
-
 
 class RomanNumeralsTest {
 
-    @Test
-    fun test1isI() {
-        val test = 1
-        val result = convert(test)
-        assertEquals("I", result)
+    @ParameterizedTest
+    @CsvSource(
+        "I, 1",
+        "II, 2",
+        "V, 5",
+        "X, 10"
+    )
+    fun testNumbers(roman: String, number: Int) {
+        val result = convert(number)
+        assertEquals(roman, result)
     }
-
 }
+
