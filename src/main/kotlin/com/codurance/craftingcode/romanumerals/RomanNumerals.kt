@@ -1,7 +1,7 @@
 package com.codurance.craftingcode.romanumerals
 
 fun convert(number: Int): String? {
-    val items = HashMap<Int, String>()
+    val items = LinkedHashMap<Int, String>()
 
     var result = ""
 
@@ -15,20 +15,13 @@ fun convert(number: Int): String? {
 
     if (items.containsKey(number)) {
         result += items[number]
-    } else if (items.containsKey(number - 1)) {
-        result = items[number - 1] + "I"
-    } else if (items.containsKey(number - 5)) {
-        result = items[number - 5] + "V"
-    } else if (items.containsKey(number - 10)) {
-        result = items[number - 10] + "X"
-    } else if (items.containsKey(number - 50)) {
-        result = items[number - 50] + "L"
-    } else if (items.containsKey(number - 100)) {
-        result = items[number - 100] + "C"
-    } else if (items.containsKey(number - 500)) {
-        result = items[number - 500] + "D"
     } else {
-        result = items[number - 1000] + "M"
+        for (key in items.keys) {
+            if (items.containsKey(number - key)) {
+                result = items[number - key] + items[key]
+                break
+            }
+        }
     }
 
     return result
