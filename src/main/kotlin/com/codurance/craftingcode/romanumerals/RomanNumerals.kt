@@ -17,8 +17,10 @@ fun convert(number: Int): String? {
         result += items[number]
     } else if (items.containsKey(number - 1)) {
         result = items[number - 1] + "I"
-    } else {
+    } else if (items.containsKey(number - 5)) {
         result = items[number - 5] + "V"
+    } else {
+        result = items[number - 10] + "X"
     }
 
     return result
