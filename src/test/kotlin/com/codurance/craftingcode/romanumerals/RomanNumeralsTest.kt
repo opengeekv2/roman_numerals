@@ -91,7 +91,51 @@ class RomanNumeralsTest {
     @CsvSource(
         "MM, 2000"
     )
-    fun testWhenNumberLetterPlusThousendThenCorrectRomanLetter(roman: String, number: Int) {
+    fun testWhenNumberLetterPlusThousandThenCorrectRomanLetter(roman: String, number: Int) {
+        assertsNumbers(roman, number)
+    }
+
+    @ParameterizedTest
+    @CsvSource(
+        "III, 3",
+        "VII, 7",
+        "XII, 12",
+        "LII, 52",
+        "CII, 102",
+        "DII, 502",
+        "MII, 1002"
+    )
+    fun testWhenNumberLetterPlusTwoThenCorrectRomanLetter(roman: String, number: Int) {
+        assertsNumbers(roman, number)
+    }
+
+    @ParameterizedTest
+    @CsvSource(
+        "XXX, 30",
+        "LXX, 70",
+        "CXX, 120",
+        "DXX, 520",
+        "MXX, 1020"
+    )
+    fun testWhenNumberLetterPlusTwentyThenCorrectRomanLetter(roman: String, number: Int) {
+        assertsNumbers(roman, number)
+    }
+
+    @ParameterizedTest
+    @CsvSource(
+        "CCC, 300",
+        "DCC, 700",
+        "MCC, 1200"
+    )
+    fun testWhenNumberLetterPlusTwoHundredThenCorrectRomanLetter(roman: String, number: Int) {
+        assertsNumbers(roman, number)
+    }
+
+    @ParameterizedTest
+    @CsvSource(
+        "MMM, 3000"
+    )
+    fun testWhenNumberLetterPlusTwoThousandThenCorrectRomanLetter(roman: String, number: Int) {
         assertsNumbers(roman, number)
     }
 
