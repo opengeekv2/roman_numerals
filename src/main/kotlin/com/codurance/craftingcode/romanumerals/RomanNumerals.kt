@@ -21,9 +21,11 @@ fun convert(number: Int): String? {
         result = items[number - 5] + "V"
     } else if (items.containsKey(number - 10)) {
         result = items[number - 10] + "X"
-    } else {
+    } else if (items.containsKey(number - 50)) {
         result = items[number - 50] + "L"
-        }
+    } else {
+        result = items[number - 100] + "C"
+    }
 
     return result
 }
