@@ -13,6 +13,10 @@ fun convert(number: Int): String {
         return romanDigits[number]!!
     }
 
+    if (number > 10) {
+        return convert(10) + convert(number - 10)
+    }
+
     if (number >= 1) {
         return convert(number-1) + romanOne
     }
