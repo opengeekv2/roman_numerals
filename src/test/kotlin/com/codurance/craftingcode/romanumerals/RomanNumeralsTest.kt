@@ -27,5 +27,19 @@ class RomanNumeralsTest {
         assertEquals("II", result)
     }
 
+    @Test
+    fun test3isIII() {
+        val test = 3
+        val result = convert(test)
+        assertEquals("III", result)
+    }
+
+    @Test
+    fun test4isIV() {
+        val test = 4
+        val result = convert(test)
+        assertEquals("IV", result)
+    }
+
 
 }
