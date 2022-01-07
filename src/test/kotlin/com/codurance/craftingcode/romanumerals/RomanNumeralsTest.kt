@@ -95,5 +95,54 @@ class RomanNumeralsTest {
         val test = 14
         val result = convert(test)
         assertEquals("XIV", result)
-    } 
+    }
+    
+    @Test
+    fun test15isXV() {
+        val test = 15
+        val result = convert(test)
+        assertEquals("XV", result)
+    }
+
+    @Test
+    fun test16isXVI() {
+        val test = 16
+        val result = convert(test)
+        assertEquals("XVI", result)
+    }
+
+    @Test
+    fun test18isXVIII() {
+        val test = 18
+        val result = convert(test)
+        assertEquals("XVIII", result)
+    }
+
+    @Test
+    fun test19isXIX() {
+        val test = 19
+        val result = convert(test)
+        assertEquals("XIX", result)
+    }
+
+    @Test
+    fun test20isXX() {
+        val test = 20
+        val result = convert(test)
+        assertEquals("XX", result)
+    }
+
+    @Test
+    fun test39isXXXIX() {
+        val test = 39
+        val result = convert(test)
+        assertEquals("XXXIX", result)
+    }
+
+    @Test
+    fun test40isXL() {
+        val test = 40
+        val result = convert(test)
+        assertEquals("XL", result)
+    }
 }

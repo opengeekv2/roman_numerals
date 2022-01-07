@@ -3,8 +3,9 @@ package com.codurance.craftingcode.romanumerals
 fun convert(number: Int): String {
 
     val romanDigits = HashMap<Int, String>()
-    romanDigits[9] = "IX"
+    romanDigits[40] = "XL"
     romanDigits[10] = "X"
+    romanDigits[9] = "IX"
     romanDigits[5] = "V"
     romanDigits[4] = "IV"
     val romanOne = "I"
