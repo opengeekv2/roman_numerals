@@ -14,7 +14,7 @@ fun convert(number: Int): String {
     }
 
     if (number >= 1) {
-        return romanOne + convert(number-1)
+        return convert(number-1) + romanOne
     }
 
     return ""
