@@ -68,4 +68,11 @@ class RomanNumeralsTest {
         val result = convert(test)
         assertEquals("IX", result)
     }
+
+    @Test
+    fun test10isX() {
+        val test = 10
+        val result = convert(test)
+        assertEquals("X", result)
+    } 
 }
