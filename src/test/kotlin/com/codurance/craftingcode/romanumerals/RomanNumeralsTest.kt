@@ -41,5 +41,12 @@ class RomanNumeralsTest {
         assertEquals("IV", result)
     }
 
+    @Test
+    fun test5isV() {
+        val test = 5
+        val result = convert(test)
+        assertEquals("V", result)
+    }
+
 
 }
