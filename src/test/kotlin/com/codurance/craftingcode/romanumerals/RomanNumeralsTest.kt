@@ -20,4 +20,12 @@ class RomanNumeralsTest {
         assertEquals("I", result)
     }
 
+    @Test
+    fun test2isII() {
+        val test = 2
+        val result = convert(test)
+        assertEquals("II", result)
+    }
+
+
 }
