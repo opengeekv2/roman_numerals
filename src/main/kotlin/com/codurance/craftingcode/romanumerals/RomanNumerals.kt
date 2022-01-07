@@ -1,6 +1,8 @@
 package com.codurance.craftingcode.romanumerals
 
 fun convert(number: Int): String {
-    return "I"
+    if (number == 1) {
+        return "I"
+    }
+    return ""
 }
-
