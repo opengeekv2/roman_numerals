@@ -3,6 +3,7 @@ package com.codurance.craftingcode.romanumerals
 fun convert(number: Int): String {
 
     val romanDigits = LinkedHashMap<Int, String>()
+    romanDigits[900] = "CM"
     romanDigits[500] = "D"
     romanDigits[400] = "CD"
     romanDigits[100] = "C"

@@ -188,4 +188,11 @@ class RomanNumeralsTest {
         assertEquals("D", result)
     }
 
+    @Test
+    fun test900isCM() {
+        val test = 900
+        val result = convert(test)
+        assertEquals("CM", result)
+    }
+
 }
