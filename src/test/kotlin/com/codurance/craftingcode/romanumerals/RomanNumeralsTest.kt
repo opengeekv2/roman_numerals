@@ -195,4 +195,32 @@ class RomanNumeralsTest {
         assertEquals("CM", result)
     }
 
+    @Test
+    fun test1000isM() {
+        val test = 1000
+        val result = convert(test)
+        assertEquals("M", result)
+    }
+
+    @Test
+    fun test1999isMCMXCIX() {
+        val test = 1999
+        val result = convert(test)
+        assertEquals("MCMXCIX", result)
+    }
+
+    @Test
+    fun test1555isMDLV() {
+        val test = 1555
+        val result = convert(test)
+        assertEquals("MDLV", result)
+    }
+
+    @Test
+    fun test1444isMDLV() {
+        val test = 1444
+        val result = convert(test)
+        assertEquals("MCDXLIV", result)
+    }
+
 }
