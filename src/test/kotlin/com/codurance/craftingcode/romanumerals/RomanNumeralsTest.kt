@@ -167,4 +167,18 @@ class RomanNumeralsTest {
         assertEquals("XC", result)
     }
 
+    @Test
+    fun test100isC() {
+        val test = 100
+        val result = convert(test)
+        assertEquals("C", result)
+    }
+
+    @Test
+    fun test400isCD() {
+        val test = 400
+        val result = convert(test)
+        assertEquals("CD", result)
+    }
+
 }
