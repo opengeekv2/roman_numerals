@@ -3,6 +3,8 @@ package com.codurance.craftingcode.romanumerals
 fun convert(number: Int): String {
 
     val romanDigits = LinkedHashMap<Int, String>()
+    romanDigits[90] = "XC"
+    romanDigits[50] = "L"
     romanDigits[40] = "XL"
     romanDigits[10] = "X"
     romanDigits[9] = "IX"

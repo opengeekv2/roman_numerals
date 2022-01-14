@@ -153,4 +153,18 @@ class RomanNumeralsTest {
         assertEquals("XLI", result)
     }
 
+    @Test
+    fun test50isL() {
+        val test = 50
+        val result = convert(test)
+        assertEquals("L", result)
+    }
+
+    @Test
+    fun test90isXC() {
+        val test = 90
+        val result = convert(test)
+        assertEquals("XC", result)
+    }
+
 }
